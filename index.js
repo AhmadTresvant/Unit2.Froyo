@@ -1,18 +1,24 @@
 
+let userInput = prompt(`type in the flavors you want to order seperated by commas.`)
 
-const customerOrder = prompt(`hello what flavor froyo would you like?`);
+flavorArray = userInput.split(`,`);
 
-const froyoOrder = {
-  flavors: [`vanilla`, `strawberry`, `coffee`],
+let flavorCount = {};
 
- flavorCount: (customerOrder) => {
-  let flavors = [`vanilla`, `strawberry`, `coffee`];
-    for (let i = 0; i < flavors.length; i++) {
-      console.log(flavors[i]);
-    }
+for(let i = 0; i < flavorArray.length; i++) {
+  const flavor = flavorArray[i];
+  if (flavor in flavorCount) {
+    flavorCount[flavor]++
   }
-  
-
+  else {
+    flavorCount[flavor] = 1;
+  }
+  flavorCount[flavor] = 1;
 }
+console.log(flavorCount);
 
-console.log(froyoOrder.flavorCount());
+
+
+
+
+
